@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=dataParticular.name%></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div>
+      <div>
+        <img src="/images/asset 0.png" />
+      </div>
+      <div class="fronter">
+        <h1>Welcome to Trade Center</h1>
+        <h2>Choose Option here to get details</h2>
+      <% if (data && data.length > 0) { %>
+        <ul class="select">
+          <!-- Modify the select element to show the current item and provide options to select -->
+<select onchange="handleSelection(this)">
+  <% if (data && data.length > 0) { %>
+    <% data.forEach(function(item) { %>
+      <option value="<%= item._id %>" <% if (item.name === dataParticular.name)
+       { %> selected <% } 
+        %>><%= item.name %></option>
+    <% }); %>
+  <% } %>
+</select>
+        </ul>
+      <% } else { %>
+        <p>No data available.</p>
+      <% } %>
+       </div>
+
+
+
+
+
+
+
+
+      <div>
+        
+        <div class="head">
+          <h2>Best Price to Trade</h2>
+          <h1>₹<%= (dataParticular.high) %></h1>
+          <h3>Average <%= dataParticular.name %> net price including commision</h3>
+        </div>
+      </div>
+      <div class="main-container">
+        <div class="grid-container">
+          <div class="title">
+            <h2>#</h2>
+          </div>
+          <div class="data">
+            <h2>1</h2>
+          </div>
+        </div>
+        <div class="grid-container">
+            <div class="title">
+              <h2>Platform</h2>
+            </div>
+            <div class="data">
+              <h2>Wazirx</h2>
+            </div>
+          </div>
+        <div class="grid-container">
+          <div class="title">
+            <h2>Last Traded Price</h2>
+          </div>
+          <div class="data">
+            <h2>₹<%= dataParticular.last %></h2>
+          </div>
+        </div>
+        <div class="grid-container">
+          <div class="title">
+            <h2>Buy/Sell</h2>
+          </div>
+          <div class="data">
+            <h2>₹<%= dataParticular.sell %>/<%= dataParticular.buy %></h2>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </body>
+  <script>
+    function handleSelection(selectElement) {
+      var name = selectElement.value;
+      window.location = "/items/" + name;
+    }
+  </script>
+</html>

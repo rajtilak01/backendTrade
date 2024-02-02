@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=  %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div>
+      <div>
+        <img src="/images/asset 0.png" />
+      </div>
+     <div class="fronter">
+      <h1>Welcome to Trade Center</h1>
+      <h2>Choose Option here to get details</h2>
+    <% if (data && data.length > 0) { %>
+      <ul class="select">
+        <select onchange="handleSelection(this)">
+          <% data.forEach(item => { %>
+            <h2> <option value="<%= item._id %>"><%= item.name  %></option></h2>
+  
+          <% }); %>
+        </select>
+      </ul>
+    <% } else { %>
+      <p>No data available.</p>
+    <% } %>
+     </div>
+
+
+     <div>
+      
+      <div class="head">
+        <h2>Best Price to Trade</h2>
+        <h1>₹<%= (data[0].high) %></h1>
+        <h3>Average <%= data[0].name %> net price including commision</h3>
+      </div>
+    </div>
+    <div class="main-container">
+      <div class="grid-container">
+        <div class="title">
+          <h2>#</h2>
+        </div>
+        <div class="data">
+          <h2>1</h2>
+        </div>
+      </div>
+      <div class="grid-container">
+          <div class="title">
+            <h2>Platform</h2>
+          </div>
+          <div class="data">
+            <h2>Wazirx</h2>
+          </div>
+        </div>
+      <div class="grid-container">
+        <div class="title">
+          <h2>Last Traded Price</h2>
+        </div>
+        <div class="data">
+          <h2>₹<%= data[0].last %></h2>
+        </div>
+      </div>
+      <div class="grid-container">
+        <div class="title">
+          <h2>Buy/Sell</h2>
+        </div>
+        <div class="data">
+          <h2>₹<%= data[0].sell %>/<%= data[0].buy %></h2>
+        </div>
+      </div>
+      
+    </div>
+
+
+
+
+
+
+
+
+    </div>
+  </body>
+  <script>
+    function handleSelection(selectElement) {
+      var name = selectElement.value;
+      window.location = "/items/" + name;
+    }
+  </script>
+</html>

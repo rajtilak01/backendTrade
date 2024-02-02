@@ -1,0 +1,107 @@
+/* body {
+  padding: 25px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #2e3241;
+} */
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #2e3241;
+  margin: 0; /* Reset the margin to remove any default spacing */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Horizontally center the content */
+  /* align-items: center; Vertically center the content */
+  height: 100vh; /* Set the height to 100% of the viewport height */
+}
+
+a {
+  color: #00B7FF;
+}
+.head {
+  /* background: #fff; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Set the text color to white */
+}
+h1{
+  /* background: #000; */
+  /* line-height: -2; */
+  margin: 0;
+  padding: 0;
+  font-size: 68px;
+  color: white;
+  /* margin: 20px 0; */
+  
+}
+h2{
+  /* display: flex; */
+  margin: 0;
+  padding: 0;
+  color: #191d28;
+  /* justify-content: center; */
+  font-size: 44px
+}
+
+h3{
+  /* margin-top: auto; */
+  margin: 0;
+  color: #191d28;
+  padding: 0;
+  /* display: flex; */
+  /* justify-content: center; */
+  font-size: 20px;
+}
+img{
+  width: 20%;
+  height: auto;
+}
+.select{
+  /* background-color: #c41c1c; */
+  padding: 14px;
+}
+option {
+  font-size: 18px; /* Set the font size for the option elements */
+  color: #000; /* Set the text color for the option elements */
+  background-color: #2e3241; /* Set the background color for the option elements */
+}
+.main-container {
+  display: flex; /* Use flexbox to make the grid items appear horizontally */
+  justify-content: center; /* Horizontally center the grid items */
+  align-items: center; /* Vertically center the grid items */
+  justify-content: space-between;
+  margin-top: 30px;
+  background: #4a516b;
+  border-radius: 10px;
+  padding:  10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;  
+  gap: 20px;  
+}
+
+.title {
+  text-align: center; 
+  color: white;  
+}
+
+.data {
+  text-align: center;  
+  color: white;  
+}
+.data h2{
+  color:white;
+}
+
+.fronter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+ 
